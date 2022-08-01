@@ -2,7 +2,7 @@
 
 ## Day 26:
 
-### Advance Learning Algorithms Coursera by Andrew Ng
+### 1- Advance Learning Algorithms Coursera by Andrew Ng
 
 #### Neuronal Network Layer
 
@@ -45,7 +45,7 @@ The below graph shows the general architecture of a complex NN that use the abov
 ![NN_complex](https://user-images.githubusercontent.com/46135649/182147605-17f0f0b9-5c70-4dbb-91a7-e73da330be19.png)
 
 
-### TensorFlow Developer Certificate by Zero to Mastery
+### 2- TensorFlow Developer Certificate by Zero to Mastery
 
 #### Steps to improve a model
 
@@ -66,7 +66,7 @@ Sometimes the model with more layers, small learning rate and high number of epo
 ![Improve NN](https://user-images.githubusercontent.com/46135649/182184699-d1f67197-190d-44ff-876a-6b50f40b1d2c.png)
 
 
-### Machine Learning with Python by FreeCodeCamp
+### 3- Machine Learning with Python by FreeCodeCamp
 
 #### NLP with RNNs
 
@@ -108,9 +108,23 @@ We pass the training data, the epochs and choose the amount of data use for the 
 history = model.fit(train_data, train_labels, epochs=10, validation_split=0.2)
 ```
 
-### Design Machine Learning Systems by Chip Huyen
+### 4- Design Machine Learning Systems by Chip Huyen
 
-#### Data Engineering Fundamentals
+#### Chapter 3. Data Engineering Fundamentals
+
+![sqlvsnonsql](https://user-images.githubusercontent.com/46135649/182207369-f9e019e7-d8c3-4c18-9c5c-314ab068ef50.png)
+
+The above table shows the difference between Strcuture data and unstructure data. This is a critical aspect of ML systems since is going to decide how are we going to store our data and provide to the different departments. 
+
+Unstructure data allow flexibility, if things on the data changes we can easily customize with unstructure data since all our data doesn't need to follow the same schema. On the other hand, structure data follows the same schema, so if one thing change all the data needs to be customize to incorporate the change. Usually structure data is used to store data that has been procesed and send to the teams for analysis, while non strcutre data is raw data that needs some type of transformation. 
+
+
+Types of workloads:
+- Transactional Processing
+- Analytical Processing
+
+
+
 
 
 
