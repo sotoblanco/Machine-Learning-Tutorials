@@ -63,6 +63,9 @@ We need to go each of this one by one and adjusting as we see the results
 
 Sometimes the model with more layers, small learning rate and high number of epochs is not the best one, so that's why we need to keep evaluating with each metric one by one and see what works. 
 
+![Improve NN](https://user-images.githubusercontent.com/46135649/182184699-d1f67197-190d-44ff-876a-6b50f40b1d2c.png)
+
+
 
 
 
