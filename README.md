@@ -1,8 +1,8 @@
 # Machine-Learning-Tutorials
 
-## Advance Learning Algorithms Coursera by Andrew Ng
+## Day 26:
 
-### Day 26:
+### Advance Learning Algorithms Coursera by Andrew Ng
 
 #### Neuronal Network Layer
 
