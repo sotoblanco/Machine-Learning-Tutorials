@@ -40,6 +40,10 @@ The general formula for the activation value is:
 
 $a^{[l]} = g(w^{[l]} * a^{[l-1]} + b^{[l]})$
 
+The below graph shows the general architecture of a complex NN that use the above formula on each of the layers and neurons
+
+![NN_complex](https://user-images.githubusercontent.com/46135649/182147605-17f0f0b9-5c70-4dbb-91a7-e73da330be19.png)
+
 
 
 
