@@ -66,8 +66,47 @@ Sometimes the model with more layers, small learning rate and high number of epo
 ![Improve NN](https://user-images.githubusercontent.com/46135649/182184699-d1f67197-190d-44ff-876a-6b50f40b1d2c.png)
 
 
+### Machine Learning with Python by FreeCodeCamp
 
+#### NLP with RNNs
 
+Natural Language Processing
+
+We need to change each word to a numerical value, the dataset use is a review of movies from TensorFlow library. All reviews must have the same length so the data needs to be standardize. The way it works is by:
+
+- if the review is greater than 250 words then trim off the extra words
+- if the review is less than 250 words add the necessary amount of 0's to make it equal to 250.
+
+Which can be achive by using 
+```
+from keras.preprocessing import sequence
+train_data = sequence.pad_sequences(train_data, 250)
+```
+This is the overall look of the model for NLP
+
+The Embedding layer find a more meaningfull representation of our current data into vectors of 32 dimensions
+We Long Short Term Memomry for our neurons (so they can learn from the previous output)
+The activation function is the sigmoid function which allow to have a value between 0 and 1
+
+```
+model = tf.keras.Sequential([
+    tf.keras.layers.Embedding(VOCAB_SIZE, 32),
+    tf.keras.layers.LSTM(32),
+    tf.keras.layers.Dense(1, activation="sigmoid")
+])
+```
+
+We train the data by setting up the parameters of the loss function, the optimizer, and the metrics
+
+```
+model.compile(loss="binary_crossentropy",optimizer="rmsprop",metrics=['acc'])
+```
+
+We pass the training data, the epochs and choose the amount of data use for the validation data
+
+```
+history = model.fit(train_data, train_labels, epochs=10, validation_split=0.2)
+```
 
 
 
