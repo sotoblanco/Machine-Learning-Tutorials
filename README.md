@@ -124,6 +124,14 @@ Types of workloads:
 - Analytical Processing
 
 
+### 5- Crash Course Machine Learning by Google Developers 
+
+#### Multi-Class Neural Nets
+
+Often we might need to classify thing with one than more label, this can be achive with **One vs. all** aproach to levarage binary classification, in which we create a binary classifier for each possible outcome. 
+
+This approach is reasonable with small number of classes but it becomes increasingly ineficcient as the number of classes rises. 
+
 
 
 
