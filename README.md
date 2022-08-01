@@ -132,14 +132,35 @@ Often we might need to classify thing with one than more label, this can be achi
 
 This approach is reasonable with small number of classes but it becomes increasingly ineficcient as the number of classes rises. 
 
+![one_vs_all](https://user-images.githubusercontent.com/46135649/182247594-f57b092f-d868-4bf8-88be-7428c855e2bb.png)
+
+The second approach is **Softmax** in which we extend the idea of the logistic regression into a multiclass world.
+
+**Softmax options**
+
+-Full softmax: calculates the probability for every possible class
+-Candidate sampling: means that softmax calculates a probability for all possible labels but only for a random sample of negative labels. This approach can improve efficiency with large number of classes. 
+
+Softmax assumes that each example belong to exactly just one class, however if the problem has more than one class you may not use softmax and you most rely on multiple logistic regressions.
+
+To access to the pictures in a dataset after each picture is code by a number you can use:
+
+`` matplotlib.pyplot.imshow `` which allow to interpret numeric array as an image
+
+```
+# import modules
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+from tensorflow.keras import layers
+import matplotlib.pyplot as plt
+
+# get the mnist dataset
+(x_train, y_train),(x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
 
-
-
-
-
-
-
+plt.imshow(X_train[2917])
+```
 
 
 
