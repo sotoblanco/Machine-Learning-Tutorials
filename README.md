@@ -45,6 +45,31 @@ The below graph shows the general architecture of a complex NN that use the abov
 ![NN_complex](https://user-images.githubusercontent.com/46135649/182147605-17f0f0b9-5c70-4dbb-91a7-e73da330be19.png)
 
 
+### TensorFlow Developer Certificate by Zero to Mastery
+
+#### Steps to improve a model
+
+The common ways to improve a model are:
+
+- Adding layers
+- Increase the number of hidden units
+- Change the activation functions
+- Change the optimization function
+- Change the learning rate (This is perhaps the most important parameter)
+- Fitting on more data
+- Fitting for longer
+
+We need to go each of this one by one and adjusting as we see the results
+
+Sometimes the model with more layers, small learning rate and high number of epochs is not the best one, so that's why we need to keep evaluating with each metric one by one and see what works. 
+
+
+
+
+
+
+
+
 
 
 
