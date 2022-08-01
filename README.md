@@ -38,6 +38,9 @@ No: y = 0
 
 The general formula for the activation value is:
 
+$a^{[l]} = g(w^{[l] * a^{[l-1]} + b^{[l]}$
+
+
 
 
 
