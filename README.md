@@ -6,11 +6,11 @@
 
 #### Neuronal Network Layer
 
-Each NN layer takes an input and returns an output, this ouput is call the activation value and is calculated using this formula:
+Each NN layer takes an input and returns an output. This output is called the activation value and is calculated using this formula:
 
 $a = g(w * a + b)$
 
-where g is the sigmoid function also call activation function and the parameters are taking from the logistic regression formula:
+Where g is the sigmoid function, also called activation function, and the parameters are taken from the logistic regression formula:
 
 $g(z) = 1/over 1 + e^{-(z)}$
 
@@ -59,9 +59,9 @@ The common ways to improve a model are:
 - Fitting on more data
 - Fitting for longer
 
-We need to go each of this one by one and adjusting as we see the results
+We must go through each of these individually and adjust as we see the results.
 
-Sometimes the model with more layers, small learning rate and high number of epochs is not the best one, so that's why we need to keep evaluating with each metric one by one and see what works. 
+Sometimes the model with more layers, a small learning rate, and a high number of epochs is not the best one, so that's why we need to keep evaluating each metric one by one and see what works. 
 
 ![Improve NN](https://user-images.githubusercontent.com/46135649/182184699-d1f67197-190d-44ff-876a-6b50f40b1d2c.png)
 
@@ -72,10 +72,10 @@ Sometimes the model with more layers, small learning rate and high number of epo
 
 Natural Language Processing
 
-We need to change each word to a numerical value, the dataset use is a review of movies from TensorFlow library. All reviews must have the same length so the data needs to be standardize. The way it works is by:
+We need to change each word to a numerical value. The dataset used is a review of movies from the TensorFlow library. All reviews must have the same length, so the data needs to be standardized. The way it works is by:
 
-- if the review is greater than 250 words then trim off the extra words
-- if the review is less than 250 words add the necessary amount of 0's to make it equal to 250.
+- if the review is greater than 250 words, then trim off the extra words
+- if the review is less than 250 words, add the necessary amount of 0's to equal 250.
 
 Which can be achive by using 
 ```
@@ -116,7 +116,7 @@ history = model.fit(train_data, train_labels, epochs=10, validation_split=0.2)
 
 The above table shows the difference between Strcuture data and unstructure data. This is a critical aspect of ML systems since is going to decide how are we going to store our data and provide to the different departments. 
 
-Unstructure data allow flexibility, if things on the data changes we can easily customize with unstructure data since all our data doesn't need to follow the same schema. On the other hand, structure data follows the same schema, so if one thing change all the data needs to be customize to incorporate the change. Usually structure data is used to store data that has been procesed and send to the teams for analysis, while non strcutre data is raw data that needs some type of transformation. 
+Unstructured data allow flexibility. If things on the data change, we can easily customize with unstructured data since all our data doesn't need to follow the same schema. On the other hand, structure data follows the same schema, so if one thing changes, all the data needs to be customized to incorporate the change. Usually, structured data is used to store data that has been processed and sent to the teams for analysis, while non-structured data is raw data that needs some type of transformation. 
 
 
 Types of workloads:
@@ -128,9 +128,9 @@ Types of workloads:
 
 #### Multi-Class Neural Nets
 
-Often we might need to classify thing with one than more label, this can be achive with **One vs. all** aproach to levarage binary classification, in which we create a binary classifier for each possible outcome. 
+Often, we might need to classify things with one or more labels. This can be achieved with the  One vs. all approach to leverage binary classification, in which we create a binary classifier for each possible outcome. 
 
-This approach is reasonable with small number of classes but it becomes increasingly ineficcient as the number of classes rises. 
+This approach is reasonable with a few classes but becomes increasingly inefficient as the number of classes rises. 
 
 ![one_vs_all](https://user-images.githubusercontent.com/46135649/182247594-f57b092f-d868-4bf8-88be-7428c855e2bb.png)
 
