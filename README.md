@@ -108,6 +108,12 @@ We pass the training data, the epochs and choose the amount of data use for the 
 history = model.fit(train_data, train_labels, epochs=10, validation_split=0.2)
 ```
 
+### Design Machine Learning Systems by Chip Huyen
+
+#### Data Engineering Fundamentals
+
+
+
 
 
 
