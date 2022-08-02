@@ -158,7 +158,7 @@ import matplotlib.pyplot as plt
 # get the mnist dataset
 (x_train, y_train),(x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-
+# Show image
 plt.imshow(X_train[2917])
 ```
 
