@@ -162,5 +162,19 @@ import matplotlib.pyplot as plt
 plt.imshow(X_train[2917])
 ```
 
+## Day 27
+
+### 1- Advance Learning Algorithms Coursera by Andrew Ng
+
+Foward propagation is a sequence of steps in Neural Networks to return an output. 
+
+This are the step for build a NN:
+
+- Select the number of hidden layers
+- Select the neurons in each hidden layer
+
+Behind scenes the calculation will be the activation value in each layer that will serve as input for the next layer
+
+
 
 
