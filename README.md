@@ -173,8 +173,7 @@ This are the step for build a NN:
 - Select the number of hidden layers
 - Select the neurons in each hidden layer
 
-Behind scenes the calculation will be the activation value in each layer that will serve as input for the next layer
+Behind scenes the calculation will be the activation value in each layer that will serve as input for the next layer, this type of sequential steps is called foward propagation. 
 
-
-
+![foward_propagation](https://user-images.githubusercontent.com/46135649/182459488-20ed66a0-dc75-4d75-8bc9-b292f9f9b9d3.png)
 
