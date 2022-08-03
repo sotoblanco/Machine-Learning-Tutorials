@@ -8,21 +8,22 @@
 
 Each NN layer takes an input and returns an output. This output is called the activation value and is calculated using this formula:
 
-$a = g(w * a + b)$
+$$ a = g(w * a + b) $$
 
 Where g is the sigmoid function, also called activation function, and the parameters are taken from the logistic regression formula:
 
-$g(z) = 1/over 1 + e^{-(z)}$
+
+$$ g(z) = {1\over 1 + e^{-(z)}} $$
 
 This returns an activation value that forms a vector if we have more than one neuron:
 
-$a = [0.7, 0.3, 0.2]$
+$$ a = [0.7, 0.3, 0.2] $$
 
 This vector is taken as input for the next layer
 
 The activation value recieves a subscript that denotes the layer in which was obained, so the second layer will have this formula:
 
-$a = g(w * a^{[1]} + b)$
+$$ a = {g(w * a^{[1]} + b)} $$
 
 If we only have one neuron the return will be a scalar value 
 
@@ -38,7 +39,7 @@ No: y = 0
 
 The general formula for the activation value is:
 
-$a^{[l]} = g(w^{[l]} * a^{[l-1]} + b^{[l]})$
+$$ a^{[l]} = g(w^{[l]} * a^{[l-1]} + b^{[l]}) $$
 
 The below graph shows the general architecture of a complex NN that use the above formula on each of the layers and neurons
 
