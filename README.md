@@ -166,14 +166,55 @@ plt.imshow(X_train[2917])
 
 ### 1- Advance Learning Algorithms Coursera by Andrew Ng
 
-Foward propagation is a sequence of steps in Neural Networks to return an output. 
+Forward propagation is a sequence of steps in Neural Networks to return an output. 
 
-This are the step for build a NN:
+These are the step for build a NN:
 
 - Select the number of hidden layers
 - Select the neurons in each hidden layer
 
-Behind scenes the calculation will be the activation value in each layer that will serve as input for the next layer, this type of sequential steps is called foward propagation. 
+Behind scenes the calculation will be the activation value in each layer that will serve as input for the next layer, this type of sequential steps is called forward propagation. 
 
 ![foward_propagation](https://user-images.githubusercontent.com/46135649/182459488-20ed66a0-dc75-4d75-8bc9-b292f9f9b9d3.png)
+
+
+### 2- TensorFlow Certificate by Zero to Mastery
+
+Evaluating a TensorFlow model
+
+For evaluating a TF model we need to visualize
+
+- The data - what data are we working with? What does it look like?
+- The model itself - what does our model look like?
+- The training of a model - how does a model perform while it learns?
+- The predictions of the model - how do the predictions of a model line up against the ground truth
+
+### 3- Designing Machine Learning Systems by Chip Huyen
+
+**Transactional databases** are designed to have low latency and high availability requirements. Transactional databases has 4 characteristics:
+
+- Atomicity: All steps in a transaction are completed as a group
+- Consistency: All transactions must follow predefined rules
+- Isolation: To guarantee that two transactions happen at the same time
+- Durability: To guarantee that once a transaction has been committed, it will remain committed even in the case of a system failure.
+
+> An interesting paradigm in the last decade has been to decouple storage from processing (also known as compute), as adopted by many data vendors including Google’s BigQuery, Snowflake, IBM, and Teradata. In this paradigm, the data can be stored in the same place, with a processing layer on top that can be optimized for different types of queries.
+
+
+### 4- Machine Learning with Python by FreeCodeCamp
+
+NLP allows evaluating the sentiment of words in a sentence by converting them into integers. The output is a numerical value between 0 and 1 that denotes the probability of a positive sentence. We can add a threshold to our decisions to classify them into positive or negative.
+
+### 5- Machine Learning Crash Course by Google Developers
+
+**Embeddings** Allow you ow to transform your data into numerical values and represent them as numerical values, from which you can calculate how similar they are based on location in a multidimensional space. Embeddings make it easier to do ML on large inputs. 
+
+One thing to remember is that the dimensions representing your data are hyperparameters that can be optimized. As a rule of thumb, you want to apply the fourth root of the possible values in our outcome. 
+
+-Higher dimesional embeddings can represent accurately the representation between input values
+
+-More dimensions increase the chance of overfitting and leads to slower training
+
+
+
 
