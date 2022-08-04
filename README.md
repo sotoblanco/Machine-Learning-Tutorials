@@ -217,5 +217,120 @@ One thing to remember is that the dimensions representing your data are hyperpar
 -More dimensions increase the chance of overfitting and leads to slower training
 
 
+## Day 27
+
+### 1- Advance Learning Algorithms Coursera by Andrew Ng
+
+To obtain the activation values in Python we can do the following:
+
+The following code returns the activation value for a layer with 3 neurons and use the sigmoid function as activation function. The second layer 
+
+```
+x = np.array([[200.0, 17.0]])
+layer_1 = Dense(units=3, activation="sigmoid")
+a1 = layer_1(x)
+
+layer_2 = Dense(units=1, activation="sigmoid")
+a2 = layer_2(a1)
+```
+
+Data in TensorFlow
+
+Let's start on how numpy represents the data
+
+| temperature | duration | Good coffe? (1/0) |
+| 200.0 | 17.0 | 1 |
+
+We have temperature and duration as independent feature, those can be represented in a NumPy array in different ways:
+
+x = np.array([[200.0, 17.0]])
+
+To explain why we have two square brackets we need to understand how numpy stores data
+
+$$
+\begin{pmatrix}
+1 & 2 & 3\\ 
+4 & 5 & 6
+\end{pmatrix}
+$$
+
+This is a bidimensional 2 x 3 matrix. It has 2 rows and 3 columns
+
+NumPy representation of the same matrix is:
+```
+x = np.array([[1,2,3],
+             [4,5,6]])
+```
+
+$$
+\begin{pmatrix}
+0.1 & 0.2\\ 
+-3 & -4\\
+-.5 & -.6\\
+7 & 8
+\end{pmatrix}
+$$
+
+This is a bidemensional 4 x 2 matrix
+
+NumPy representation of this matrix is:
+
+```
+x = np.array([[0.1, 0.2],
+              [-3.0, -4.0,],
+              [-0.5, -0.6],
+              [7.0, 8.0]])
+```
+
+Going back to the problem, there are different ways to represent the same information:
+
+```
+x = np.array([[200.0, 17.0]]) # creates a 1 by 2 matrix: 1 row and 2 columns
+
+x = np.array([[200],
+               [17]]) # creates a 2 by 1 matrix: 2 rows 1 column
+               
+x = np.array([200,700]) # creates a 1-d vector              
+
+```
+
+TensorFlow has the convention to store the data in matrix and not in vectors which is something to be aware while working with these two libraries.
+
+
+### 2- TensorFlow Certificate by Zero to Mastery
+
+#### Evaluating a TensorFlow models performance 
+
+The three sets...
+
+Training set - the model learns from this data (70-80%)
+
+Validation set - The model gets tuned on this data (10-15%)
+
+Test set - The model gets evaluated on this data (10-15%)
+
+
+Split your data
+
+```
+X_train = X[:int(len(X)*0.8)]
+y_train = y[:int(len(X)*0.8)]
+
+X_test = X[int(len(X)*0.8):]
+y_test = y[int(len(X)*0.8):]
+
+```
+
+### 3- Designing Machine Learning Systems by Chip Huyen
+
+#### ETL
+
+E: Extract the data from all your data sources - Validate your data and reject the one that doesn't meet the requirements
+
+T: Transform might imply join data, clean it. Standardize value ranges, apply operation and derive new features.
+
+L: Load is deciding how often to load your transformed data into the target destination.
+
+![ETL](https://user-images.githubusercontent.com/46135649/182941395-3f073b29-b16a-47d6-9d03-3b858843a4bb.png)
 
 
