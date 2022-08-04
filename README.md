@@ -333,4 +333,22 @@ L: Load is deciding how often to load your transformed data into the target dest
 
 ![ETL](https://user-images.githubusercontent.com/46135649/182941395-3f073b29-b16a-47d6-9d03-3b858843a4bb.png)
 
+### 4- Machine Learning with Python by FreeCodeCamp
 
+Text generator allows to predict the next character using length of a sequence as input.
+
+For this we need to create a dictionary with every unique character in our text that encodes every character with a number, so each word will have a unique sequence of numbers.
+
+Since we want to predict the next character based on a length sequence we need to split our data. e.g. Input: Hell | output: ello
+
+We use a batch approach which mean we are not going to do this for every word instead we will be using this for a batch of words.
+
+### 5- Machine Learning Crash Course by Google Developers
+
+#### ML Engineering
+
+Machine Learning systems has a wide of range of components that are not part of the training system of your data
+
+![ML_systems](https://user-images.githubusercontent.com/46135649/182962039-d22ee479-81ed-4ccf-82aa-f9d7e2f47633.png)
+
+The above picture shows the requirements for ML model in production, some systems design can help in many of these components.
