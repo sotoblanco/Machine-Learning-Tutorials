@@ -239,6 +239,7 @@ Data in TensorFlow
 Let's start on how numpy represents the data
 
 | temperature | duration | Good coffe? (1/0) |
+| ------------ | ------- | ----------------- |
 | 200.0 | 17.0 | 1 |
 
 We have temperature and duration as independent feature, those can be represented in a NumPy array in different ways:
