@@ -399,4 +399,109 @@ When we evaluate this model it has three notable things:
 - Non-trainable parameters: these parameters aren't updated during training (this is typical when you bring in already learn patterns or parameters from other models during **transfer learning**
 
 
+### 3- Designing Machine Learning Systems by Chip Huyen
+
+#### Data Flow
+
+There are three main process for data flow:
+
+**Data Passing Through Databases**
+
+Pros: Easiest way to pass data betwee process
+Cons: Both processes must be able to access the same database (not always feasible if process are run by different companies) - It might be a slow process
+
+**Data Passing Through Services**
+
+Passing data directly to a network and different companies with different purpose can run the data at the same time
+
+> The most popular styles of requests used for passing data through networks are REST (representational state transfer) and RPC (remote procedure call).
+> “REST seems to be the predominant style for public APIs. The main focus of RPC frameworks is on requests between services owned by the same organization, typically within the same data center.”
+
+**Data Passing Through Real-Time Transport**
+
+Real Time transport allow to request and get data from multiple services using a Broker to coordinate data among services.
+
+The most common types of real time transport are:
+
+-**pubsub** in which any service can publish and subscribe to a topic, pubsub often have a retention policy, the data is retained for a certain period before deleted or move to a permanent storage (e.g. Apache Kafka and Amazon Kinesis)
+
+-**Message queue model** 
+> In a message queue model, an event often has intended consumers (an event with intended consumers is called a message), and the message queue is responsible for getting the message to the right consumers (e.g. Apache RocketMQ and RabbitMQ)
+
+![real_time](https://user-images.githubusercontent.com/46135649/183249449-51649843-70bf-4bea-a3b0-6d09a6cbf13d.png)
+
+#### Batch Processing Versus Stream processing
+
+Historical data is processed in batch jobs (once a day) -> Batch processing (e.g. MapReduce and Spark)
+
+Streaming data - real time transport (Apache Kafka and Amazon Kinesis)
+
+Streaming can use technologies like Apache Flink. In stream processing you can just compute the new data and joining the new data computation with the older data computation. 
+
+Batch processing can be used for static features (don't change often) while stream processing for dynamic features (change often)
+
+
+### 4- Machine Learning with Python by FreeCodeCamp
+
+
+
+### 5- Machine Learning Crash Course by Google Developers
+
+#### Designing a ML system
+
+**Static: offine vs. Dynamic training**
+
+Static: Trained just once
+- Easy to build and test -- use batch train & test, iterate until good
+- Requires monitoring inputs (if the distribution of input changes and our model is not adapted is likely to underperform)
+- Easy to let this grow stale (need to retrain if new conditions are place)
+
+
+Dynamic: Data comes in and we incorporate that data into the model through small updates
+- Continue to feed in training data over time, regularly sync out updated version
+- Use progressive validation rather than batch training & test
+- Needs monitoring, model rollback & data quarantine capabilities
+- Will adapt to changes, staleness issues avoided
+
+
+## Day 29
+
+### 1- Advance Learning Algorithms Coursera by Andrew Ng
+
+#### Forward propagation in NumPy
+
+$$ a_1^{[1]} = g(w_1^{[1]} * x + b_1^{[1]}) $$
+
+In python:
+
+```
+w = np.array([[1, -3, 5]
+              [2, 4, -6]])
+              
+b = np.array([-1, 1, 2])
+
+a_in = np.array([-2, 4]) # could be a_0 which is equal to x
+
+def dense(a_in, W, b, g):
+    
+    units = W.shape[1] # columns of the w matrix = 3
+    a_out = np.zeros(units) # [0,0,0]
+    for j in range(units): # 0,1,2
+        w = W[:,j]
+        z = np.dot(w, a_in) + b[j]
+        a_out[j] = g(z)
+    return out
+    
+def sequential(x):
+
+    a1 = dense(x, W1, b1)
+    a2 = dense(a1, W2, b2)
+    a3 = dense(a2, W3, b3)
+    a4 = dense(a3, W4, b4)
+    f_x = a4
+    return f_x
+    
+
+```
+
 
