@@ -353,3 +353,50 @@ Machine Learning systems has a wide of range of components that are not part of 
 ![ML_systems](https://user-images.githubusercontent.com/46135649/182962039-d22ee479-81ed-4ccf-82aa-f9d7e2f47633.png)
 
 The above picture shows the requirements for ML model in production, some systems design can help in many of these components.
+
+## Day 28
+
+### 1- Advance Learning Algorithms Coursera by Andrew Ng
+
+Building a Neural Network architecture in TensorFlow
+
+```
+model = Sequential([
+    Dense(units=25, activation="sigmoid"),
+    Dense(units=15, activation="sigmoid"),
+    Dense(units=1, activation= "sigmoid")])
+    
+model.compile(...)
+
+x = np.array([[0..., 245, ..., 17], # x is a multidimensional matrix
+      [0..., 200, ..., 184])
+      
+y = np.array([1,0]) # y is an 1d array
+model.fit(x, y)
+
+model.predict(x_new)
+    
+```
+
+### 2- TensorFlow Certificate by Zero to Mastery
+
+Let's define a model just using the shape of our tensors and not the actual data
+
+```
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(1, input_shape=[1])
+])
+
+model.compile(loss=tf.keras.losses.mae, 
+    optimizer=tf.keras.optimizers.SGD(),
+    metrics=["mae"])
+```
+
+When we evaluate this model it has three notable things:
+
+- Total params: total number of parameters in the model
+- Trainable parameters - these are the parameters (patterns) the model updates as it trains
+- Non-trainable parameters: these parameters aren't updated during training (this is typical when you bring in already learn patterns or parameters from other models during **transfer learning**
+
+
+
