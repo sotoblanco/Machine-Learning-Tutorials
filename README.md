@@ -500,4 +500,93 @@ def sequential(x):
 
 ```
 
+#### Vector Matrix Multiplication
+
+Vectors can be represented as transpose vector, in which from column vector we can have a row vector and the results will be the same
+
+$$
+a = 
+\begin{pmatrix}
+1\\ 
+2\\
+\end{pmatrix}
+$$
+
+Is equal to:
+
+$$
+a^T = 
+\begin{pmatrix}
+1 & 2\\
+\end{pmatrix}
+$$
+
+We dfine the W matrix
+
+$$
+W = 
+\begin{pmatrix}
+3 & 5\\ 
+4 & 6\\
+\end{pmatrix}
+$$
+
+$$ Z = a^TW $$
+
+$$ (1 * 3) + (2 * 4) = 3 + 8 = 11 $$
+
+$$ (1 * 5) + (2 * 6) = 5 + 12 = 17 $$
+
+$$ Z = [11  17] $$
+
+
+#### Matrix Matrix Multiplication
+
+Matrix transpose takes the columns and converted into rows
+
+$$
+A = 
+\begin{pmatrix}
+1 & -1\\ 
+2 & -2\\
+\end{pmatrix}
+$$
+
+$$
+A^T = 
+\begin{pmatrix}
+1 & 2\\ 
+-1 & -2\\
+\end{pmatrix}
+$$
+
+$$
+W = 
+\begin{pmatrix}
+3 & 5\\ 
+4 & 6\\
+\end{pmatrix}
+$$
+
+
+$$ Z = A^TW $$
+
+$$
+Z = 
+\begin{pmatrix}
+a_1^TW_1 & a_1^TW_2\\ 
+a_2^TW_1 & a_2^TW_2\\
+\end{pmatrix}
+$$
+
+
+
+row1 col1
+
+row2 col1
+
+row1 col2
+
+row2 col2
+
 
