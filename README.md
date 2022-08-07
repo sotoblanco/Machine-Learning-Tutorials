@@ -441,11 +441,7 @@ Streaming can use technologies like Apache Flink. In stream processing you can j
 Batch processing can be used for static features (don't change often) while stream processing for dynamic features (change often)
 
 
-### 4- Machine Learning with Python by FreeCodeCamp
-
-
-
-### 5- Machine Learning Crash Course by Google Developers
+### 4- Machine Learning Crash Course by Google Developers
 
 #### Designing a ML system
 
