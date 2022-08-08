@@ -482,11 +482,13 @@ def dense(a_in, W, b, g):
     
     units = W.shape[1] # columns of the w matrix = 3
     a_out = np.zeros(units) # [0,0,0]
+    
     for j in range(units): # 0,1,2
         w = W[:,j]
         z = np.dot(w, a_in) + b[j]
         a_out[j] = g(z)
-    return out
+        
+    return a_out
     
 def sequential(x):
 
@@ -589,4 +591,22 @@ row1 col2
 
 row2 col2
 
+**Vectorize Implementation**
+
+```
+AT = np.array([[200, 17]])
+
+W = np.array([[1, -3, 5],
+              [-2, 4, -6])
+
+b = np.array([[-1, 1, 2]])
+
+def dense(AT, W, b, g):
+    
+    z = np.matmul(AT, W) + b
+    a_out = g(z)
+    
+    return a_out
+
+```
 
