@@ -610,3 +610,118 @@ def dense(AT, W, b, g):
 
 ```
 
+## Day 30
+### 1- Advance Learning Algorithms by Andrew Ng
+
+### Model training Steps
+
+ 1. Specify how to compute output given input X and parameters w and b 
+ 2. Specify the loss and cost
+ 3. Train on data to minimize the cost function
+
+Logistic regression steps
+
+1)
+
+    z = np.dot(w, x) + b
+    f_x = 1/(1+np.exp(-z))
+
+2)
+
+    loss = -y * np.log(f_x) -(1-y) * np.log(1-f_x)
+ 3)
+
+    w = w - alpha * dj_dw
+    b = b - alpha * dj_db
+
+Neural Network steps
+
+1)
+
+    import tensorflow as tf
+    from tensorflow.keras import Sequential
+    from tensorflow.keras.layers import Dense
+    model = sequential([
+		    Dense(units = 25, activation = "sigmoid")
+		    Dense(units=15, activation = "sigmoid")
+		    Dense(units=1, activation = "sigmoid")
+				    ])
+2) 
+
+    # binary prediction
+    from tensorflow.keras.losses import BinaryCrossentropy 
+    model.compile(loss = BinaryCrossentropy())
+    
+    # regression prediction
+    from tensorflow.keras.losses import MeanSquaredError 
+    model.compile(loss = MeanSquaredError())
+
+
+3) 
+
+    # Minimize the cost function using back propagation
+    model.fit(X, y, epochs=100)
+
+
+### 2- TensorFlow Developer Certificate by Zero to Mastery
+
+TensorFlow allows visualizing the model and customize the names for a better explanation on how we build the model. 
+
+Let's use an example without data by using just the input shape of the model:
+
+```python
+import tensorflow as tf
+# build the model
+model = tf.keras.Sequential([
+tf.keras.layers.Dense(10, input_shape=[1], name="input_layer"),
+tf.keras.layers.Dense(1, name="output_layer")
+], name="model_1")
+
+# compile the model
+model.compile(loss=tf.keras.losses.mae,
+optimizer=tf.keras.optimizers.SGD(),
+metrics=["mae"])
+
+model.summary()
+```
+This creates a model summary with layers, the output shape of each layer, and the parameters. The total parameters divided by the trainable parameters and non-trainable parameters.
+
+**Plot the model**
+```python
+from tensorflow.keras.utils import plot_model
+plot_model(model=model, show_shapes=True)
+ ```
+
+### 3- Design Machine Learning Systems by Chip Huyen
+
+Feedback loop: It is defined as the time from when a prediction is served until when feedback is provided. 
+
+Short feedback loops are task where labels are generally available within minutes (e.g. recommendation system for streaming services, stock market...)
+
+Long feedback loop are task where labels are available for weeks or even months (e.g. fraud detection systems...)
+
+There are four types of method for lack of labels, summarize in the below table.
+
+![labels](https://user-images.githubusercontent.com/46135649/183468295-49f1b387-132f-4430-a890-b450cc653932.png)
+
+### 4-  Machine Learning with Python by FreeCodeCamp
+
+NLP has several steps to follow for building a model:
+
+1. Start by decoding your text into numbers
+2. Separated between training and testing example
+3. Choose the first parameters of your model
+4. Build the model (use embedding layer, LSTM layer and the output layer)
+5. Create the loss function
+6. Compile the model
+7. Generate text
+
+### 5- ML Crash course by Google Developers
+
+Data is the most important asset of the models, we need to evaluate features using a check list:
+
+ - [ ] Reliability: What happens when the signal is not available? 
+ - [ ] Versioning: Does the system that computes this signal ever change?
+ - [ ] Necessity: Does the usefulness of the signal justify the cost of including it?
+ - [ ] Correlations: are the features causal or just correlated? will this relationship change over time?
+ - [ ] Feedback Loops: which of my input signals may be impacted by my model's outputs?
