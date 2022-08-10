@@ -725,3 +725,83 @@ Data is the most important asset of the models, we need to evaluate features usi
  - [ ] Necessity: Does the usefulness of the signal justify the cost of including it?
  - [ ] Correlations: are the features causal or just correlated? will this relationship change over time?
  - [ ] Feedback Loops: which of my input signals may be impacted by my model's outputs?
+ 
+## Day 31
+
+### 1- Advanced Learning Algorithms by Andrew Ng
+
+Activation Functions
+
+There are three activations functions that we can use in many ways to came up with powerful models:
+
+Let's breakdown by layers:
+
+***Output layer***
+
+**Linear activation functions**: Better for values that can take positive and negative values
+**Sigmoid functions**: Better suit for binary classification problems
+**ReLU**: Better for positive numbers such as house price
+
+***Hidden layer***
+ReLU is the most common activation function for the hidden layers since it provide a faster learning. The explanation behind this statement is that ReLU is flat on just one side of the graph while sigmoid is flat in both places which make gradient descent converge in a slower pace. 
+
+![activation_functions](https://user-images.githubusercontent.com/46135649/183745294-19642389-7eb5-43c1-a663-8b1407072573.png)
+
+The code implementation of the above theory is:
+```python
+from tf.keras.layers import Dense
+model = Sequential([
+	Dense(units=25, activation='relu'),
+	Dense(units=15, activation='relu'),
+	# for binary output
+	Dense(units=1, activation='sigmoid') 
+	])
+```
+
+### 2- TensorFlow Developer Certificate by Zero To Mastery
+
+#### Visualize models performance
+
+```python
+def plot_predictions(train_data=X_train,
+					 train_labels=y_train,
+					 test_data = X_test,
+					 test_labels=y_test,
+					 predictions=y_pred):
+
+	"""
+	Plots training data, test data
+	"""
+	plt.figure(figsize=(10,7))
+	# plot training data in blue
+	plt.scatter(train_data, train_labels, c="b", label="Training data")
+	# plot testing data in green
+	plt.scatter(test_data, test_labels, c= "g", label="Testing data")
+	# plot model predictions in red
+	plt.scatter(test_data, predictions, c= "r", label="Predictions")
+	# show legend
+	plt.legend();
+```
+### 3- Machine Learning  with Python by FreeCodeCamp
+
+#### Reinforcement Learning
+
+Terminology:
+**Environment**: Learning task that our agent explore
+**Agent**: Entity that explore the environment
+**State**: Status of the agent (e.g. location in the environment)
+**Action**: Interaction between the agent and the environment
+**Reward**: Every action that our agent takes will result in a reward (positive or negative)
+
+***Q-Learning***
+Possible actions that can be performed by the agent in a given step with the expected return
+
+### 4- Machine Learning Crash Course by Google Developers
+
+Type of Bias
+Reporting bias
+Automation bias
+Selection bias
+Group Attribution bias
+Implicit bias
+
