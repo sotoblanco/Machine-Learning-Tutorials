@@ -798,10 +798,11 @@ Possible actions that can be performed by the agent in a given step with the exp
 
 ### 4- Machine Learning Crash Course by Google Developers
 
-Type of Bias
-Reporting bias
-Automation bias
-Selection bias
-Group Attribution bias
-Implicit bias
+**Type of Bias**
+
+- Reporting bias
+- Automation bias
+- Selection bias
+- Group Attribution bias
+- Implicit bias
 
