@@ -806,3 +806,89 @@ Possible actions that can be performed by the agent in a given step with the exp
 - Group Attribution bias
 - Implicit bias
 
+## Day 32
+
+### 1- Advanced Learning Algorithms by Andrew Ng
+
+#### Multiclass classification
+
+Softmax:
+
+Logistic regression returns the probability of y 	= 1, therefore it also returns the probability of y = 0
+
+Let's review an example
+
+Softmax regression for 4 possible outcomes	
+
+1) $$ z_1 = w_1 * x + b_1 $$
+2) $$ z_2 = w_2 * x + b_2 $$
+2) $$ z_3 = w_3 * x + b_3 $$
+4) $$ z_4 = w_4 * x + b_4 $$
+
+The formula to compute the probability of y in each outcome is computed by using:
+
+1) $$ a_1 = {e^{z1}\over e^{z_1} + e^{z_2} + e^{z_3} + e^{z_4}}  = P(y = 1|x) $$
+
+1) $$ a_2 = {e^{z2}\over e^{z_1} + e^{z_2} + e^{z_3} + e^{z_4}}= P(y = 2|x)$$
+
+1) $$ a_3 = {e^{z3}\over e^{z_1} + e^{z_2} + e^{z_3} + e^{z_4}}= P(y = 3|x) $$
+
+1) $$ a_4 = {e^{z4}\over e^{z_1} + e^{z_2} + e^{z_3} + e^{z_4}}= P(y = 4|x) $$
+
+General formula based on these assumptions:
+
+$$ z_j = w_j * x + b_j $$
+
+$$ a_j = {e^{zj}\over \sum^N_{k=1} e^{zk}} = P(y	=j|x) $$
+
+***Cost function***
+![softmax_cost](https://user-images.githubusercontent.com/46135649/184257494-23b4fd74-932f-44fb-90dd-afd7dc0867c6.png)
+
+**Neural Network with softmax output**
+
+The hidden layers are calculated following the same rules of the previous examples. 
+
+The output layer is calculated using ***softmax*** to get the probabilities of each one of the classes. 
+
+The Python code for a multi-classification problem is:
+
+1) Specify the model:
+```python
+# 1- specify the model
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+model = Sequential([
+	Dense(units=25, activation='relu')
+	Dense(units=15, activation='relu')
+	Dense(units=10, activation='softmax')
+	])
+```
+2) Specify the loss and cost 
+```python 
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+model.compile(loss=SparseCategoricalCrossentropy())
+```
+3) Train on data to minimize J(w,b)
+
+```python
+model.fit(X, Y, epochs=100)
+```
+
+This is not the most efficient way of implementing the code since some numerical errors might occur, the most efficient way is:
+```python
+import tensorflow as tf
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+model = Sequential([
+	Dense(units=25, activation='relu')
+	Dense(units=15, activation='relu')
+	Dense(units=10, activation='linear')
+	])
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
+model.fit(X, Y, epochs=100)
+logits=model(X)
+f_x =tf.nn.softmax(logits)
+```
+
