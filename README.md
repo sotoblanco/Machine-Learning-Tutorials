@@ -821,8 +821,11 @@ Let's review an example
 Softmax regression for 4 possible outcomes	
 
 1) $$ z_1 = w_1 * x + b_1 $$
+
 2) $$ z_2 = w_2 * x + b_2 $$
+
 2) $$ z_3 = w_3 * x + b_3 $$
+
 4) $$ z_4 = w_4 * x + b_4 $$
 
 The formula to compute the probability of y in each outcome is computed by using:
