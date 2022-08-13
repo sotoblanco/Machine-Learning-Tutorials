@@ -895,3 +895,46 @@ logits=model(X)
 f_x =tf.nn.softmax(logits)
 ```
 
+
+## Day 33
+
+### 1- Advanced Learning Algorithms by Andrew Ng
+
+Advance Optimization
+
+***Adam algorithm***
+
+Allow to optimize the convergent rate of gradient descent by increasing or decreasing alpha automatically. 
+
+Adam: **Ada**ptive **M**ovement estimation
+
+Python implementation of ADAM
+
+```python
+# Model
+model = Sequential([
+		tf.keras.layers.Dense(units=25,activation="sigmoid")
+		tf.keras.layers.Dense(units=10,activation='sigmoid')
+		tf.keras.layers.Dense(units=10,activation='linear')
+# compile
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
+	loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
+#fit
+model.fit(X,Y, epochs=100)
+```
+
+### 2- TensorFlow Developer Certificate by Zero To Mastery
+
+***Evaluation metrics***
+
+There are different evaluation metrics depending on the problem you're working on. 
+
+- MAE - mean absolute error: on average how wrong is each of my model's predictions
+- MSE - mean square error, "Square the average errors"
+
+| Metric name | Metric formula | TensorFlow code | When to use |
+|--|--|--|--|
+| Mean absolute error (MAE) | $$MAE = {\sum ^n_{i=1} \|y_i - Y_i\| \over n}$$ |``tf.keras.losses.MAE()`` or ``tf.metrics.mean_absolute_error() ``  | As a great starter metric for any regression problem |
+| Mean square error (MSE) | $$MSE =  {1\over n} {\sum ^n_{i=1} (y_i - Y_i)^2}$$  |``tf.keras.losses.MSE()`` or ``tf.metrics.mean_square_error() ``  | When larger errors are more significant than smaller errors. |
+| Huber  | |``tf.keras.losses.Huber()`` | Combination of MSE and MAE. Less sensitive to outliers than MSE.|
+
