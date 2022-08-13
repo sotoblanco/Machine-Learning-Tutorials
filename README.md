@@ -845,6 +845,7 @@ $$ z_j = w_j * x + b_j $$
 $$ a_j = {e^{zj}\over \sum^N_{k=1} e^{zk}} = P(y	=j|x) $$
 
 ***Cost function***
+
 ![softmax_cost](https://user-images.githubusercontent.com/46135649/184257494-23b4fd74-932f-44fb-90dd-afd7dc0867c6.png)
 
 **Neural Network with softmax output**
