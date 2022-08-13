@@ -863,8 +863,8 @@ import tensorflow as tf
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
 model = Sequential([
-	Dense(units=25, activation='relu')
-	Dense(units=15, activation='relu')
+	Dense(units=25, activation='relu'),
+	Dense(units=15, activation='relu'),
 	Dense(units=10, activation='softmax')
 	])
 ```
@@ -885,8 +885,8 @@ import tensorflow as tf
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
 model = Sequential([
-	Dense(units=25, activation='relu')
-	Dense(units=15, activation='relu')
+	Dense(units=25, activation='relu'),
+	Dense(units=15, activation='relu'),
 	Dense(units=10, activation='linear')
 	])
 from tensorflow.keras.losses import SparseCategoricalCrossentropy
@@ -914,8 +914,8 @@ Python implementation of ADAM
 ```python
 # Model
 model = Sequential([
-		tf.keras.layers.Dense(units=25,activation="sigmoid")
-		tf.keras.layers.Dense(units=10,activation='sigmoid')
+		tf.keras.layers.Dense(units=25,activation="sigmoid"),
+		tf.keras.layers.Dense(units=10,activation='sigmoid'),
 		tf.keras.layers.Dense(units=10,activation='linear')
 # compile
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
