@@ -861,5 +861,3 @@ $$ H(0.5) - ({2\over 10} H ({2\over 2}) + {8\over 10}H ({3\over 8})) $$
 Threshold: 9
 
 $$ H(0.5) - ({4\over 10} H ({4\over 4}) + {6\over 10}H ({1\over 6})) $$
-
-
